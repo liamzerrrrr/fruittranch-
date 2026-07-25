@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Store — tranches de fruits séchés pour cocktails</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Manrope:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400&amp;family=Parisienne&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0A0A0B; color: #F2EDE4; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #FF8A1F; text-decoration: none; }
+  a:hover { color: #FFB45C; }
+  @keyframes haloPulse {
+    0%, 100% { opacity: .55; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.035); }
+  }
+  @keyframes slowDrift {
+    0%, 100% { transform: translate3d(0,0,0); }
+    50% { transform: translate3d(0,-14px,0); }
+  }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#0A0A0B;font-family:Manrope,Helvetica,Arial,sans-serif;overflow-x:hidden">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;background:rgba(10,10,11,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(242,237,228,.08)">
+    <span style="font-family:Parisienne,cursive;font-size:26px;color:#F2EDE4;letter-spacing:.5px;text-shadow:0 0 18px rgba(255,138,31,.45)">StoreMédhi</span>
+    <nav style="display:none;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,237,228,.62)" data-nav="">
+      <a href="#gamme" style="color:inherit">Gamme</a>
+      <a href="#usages" style="color:inherit">Usages</a>
+      <a href="#pro" style="color:inherit">Pro / CHR</a>
+      <a href="#apropos" style="color:inherit">À propos</a>
+    </nav>
+    <a href="#gamme" style="padding:10px 18px;border-radius:999px;background:#FF8A1F;color:#0A0A0B;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 24px rgba(255,138,31,.35)" style-hover="background:#FFB45C;color:#0A0A0B">Commander</a>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:88px 24px 104px;gap:30px;min-height:88vh">
+    <div style="position:absolute;top:-10%;left:50%;width:min(1100px,140vw);height:min(1100px,140vw);transform:translateX(-50%);background:radial-gradient(circle,rgba(255,138,31,.16) 0%,rgba(255,138,31,.05) 38%,rgba(10,10,11,0) 68%);pointer-events:none"></div>
+
+    <div style="position:relative;display:flex;align-items:center;justify-content:center;width:min(300px,72vw);height:min(300px,72vw)" data-halo="">
+      <div style="position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,138,31,.85);box-shadow:0 0 42px rgba(255,138,31,.5),inset 0 0 42px rgba(255,138,31,.22);animation:haloPulse 5.5s ease-in-out infinite" data-pulse=""></div>
+      <img src="uploads/orange.png" alt="" style="position:absolute;inset:-6%;width:112%;height:112%;object-fit:contain;mix-blend-mode:screen;opacity:.22;pointer-events:none">
+      <div style="position:absolute;inset:26px;border-radius:50%;border:1px solid rgba(255,138,31,.18)"></div>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:6px">
+        <span style="font-family:Parisienne,cursive;font-size:clamp(44px,11vw,68px);line-height:1;color:#FFF6EA;text-shadow:0 0 32px rgba(255,138,31,.6)">Médhi</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(242,237,228,.5)">Séché lentement</span>
+      </div>
+    </div>
+
+    <h1 data-reveal="" style="position:relative;margin:0;max-width:16ch;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,74px);line-height:1.06;letter-spacing:-.015em;color:#F7F2E9;text-wrap:balance;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">La tranche qui <em style="font-style:italic;color:#FF8A1F;text-shadow:0 0 34px rgba(255,138,31,.45)">réveille</em> le verre</h1>
+
+    <p data-reveal="" style="position:relative;margin:0;max-width:52ch;font-size:clamp(15px,2.4vw,18px);line-height:1.7;font-weight:300;color:rgba(242,237,228,.66);text-wrap:pretty;opacity:0;transform:translateY(24px);transition:opacity .9s ease .1s,transform .9s ease .1s">Des fruits tranchés à la main, séchés lentement à basse température. Sans sucre ajouté, sans conservateur — juste l'arôme concentré, prêt à parfumer vos cocktails et mocktails.</p>
+
+    <div data-reveal="" style="position:relative;display:flex;flex-wrap:wrap;gap:14px;justify-content:center;opacity:0;transform:translateY(24px);transition:opacity .9s ease .2s,transform .9s ease .2s">
+      <a href="#gamme" style="padding:16px 30px;border-radius:999px;background:#FF8A1F;color:#0A0A0B;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 0 38px rgba(255,138,31,.42)" style-hover="background:#FFB45C">Découvrir la gamme</a>
+      <a href="#pro" style="padding:16px 30px;border-radius:999px;border:1px solid rgba(242,237,228,.22);color:rgba(242,237,228,.82);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase" style-hover="border-color:rgba(255,138,31,.6);color:#FF8A1F">Espace bars &amp; restaurants</a>
+    </div>
+
+    <div style="position:relative;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,228,.38);padding-top:18px">
+      <span>0 % sucre ajouté</span><span>Séchage 12–24 h</span><span>Fruits de saison</span>
+    </div>
+  </section>
+
+  <!-- GAMME -->
+  <section id="gamme" style="position:relative;padding:96px 24px;border-top:1px solid rgba(242,237,228,.07)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;max-width:640px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">
+        <span data-accent-b="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#FF8A1F">01 — La gamme</span>
+        <h2 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,50px);line-height:1.12;color:#F7F2E9">Cinq <em data-accent-b="" style="font-style:italic;color:#FF8A1F">tranches</em>, cinq caractères</h2>
+        <p style="margin:0;font-size:16px;line-height:1.7;font-weight:300;color:rgba(242,237,228,.6);text-wrap:pretty">Chaque fruit a son temps de séchage. Ni trop souple, ni cassant : la tranche parfaite pour flotter, infuser ou couronner un verre.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px" data-grid="gamme">
+        <sc-for list="{{ products }}" as="p" hint-placeholder-count="5">
+          <article data-reveal="" data-card="" style="display:flex;flex-direction:column;gap:20px;padding:28px 24px 30px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid rgba(242,237,228,.09);opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease,border-color .4s ease,background .4s ease" style-hover="border-color:rgba(255,138,31,.45);background:linear-gradient(180deg,rgba(255,138,31,.09),rgba(255,255,255,.015))">
+            <div style="position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;border-radius:50%;overflow:hidden">
+              <img src="{{ p.img }}" alt="{{ p.shot }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;transform:scale(1.02);mix-blend-mode:screen">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+                <h3 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:23px;color:#F7F2E9">{{ p.name }}</h3>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF8A1F" data-accent-b="">{{ p.dry }}</span>
+              </div>
+              <p style="margin:0;font-size:14px;line-height:1.65;font-weight:300;color:rgba(242,237,228,.58);text-wrap:pretty">{{ p.desc }}</p>
+              <span style="margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,228,.4)">↳ {{ p.use }}</span>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- USAGES -->
+  <section id="usages" style="position:relative;padding:96px 24px;border-top:1px solid rgba(242,237,228,.07);background:radial-gradient(120% 60% at 50% 0%,rgba(255,138,31,.07),rgba(10,10,11,0) 60%)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:52px">
+      <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">
+        <div style="display:flex;flex-direction:column;gap:14px;max-width:560px">
+          <span data-accent-b="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#FF8A1F">02 — Usages</span>
+          <h2 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,50px);line-height:1.12;color:#F7F2E9">Quatre façons de <em data-accent-b="" style="font-style:italic;color:#FF8A1F">servir</em></h2>
+        </div>
+        <p style="margin:0;max-width:34ch;font-size:15px;line-height:1.7;font-weight:300;color:rgba(242,237,228,.55)">Du geste de bar le plus simple à l'infusion longue : la tranche travaille pendant que le verre repose.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
+        <sc-for list="{{ uses }}" as="u" hint-placeholder-count="4">
+          <article data-reveal="" style="display:flex;flex-direction:column;gap:18px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">
+            <div style="position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:16px;border:1px solid rgba(242,237,228,.1)">
+              <img src="{{ u.img }}" alt="{{ u.shot }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:20px;color:#F7F2E9">{{ u.name }}</h3>
+              <p style="margin:0;font-size:14px;line-height:1.65;font-weight:300;color:rgba(242,237,228,.56);text-wrap:pretty">{{ u.desc }}</p>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRO / B2B -->
+  <section id="pro" style="position:relative;padding:96px 24px;border-top:1px solid rgba(242,237,228,.07)">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center;padding:clamp(28px,5vw,60px);border-radius:26px;background:linear-gradient(140deg,rgba(255,138,31,.1),rgba(255,255,255,.02) 55%);border:1px solid rgba(255,138,31,.24);box-shadow:0 0 80px rgba(255,138,31,.08)">
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:20px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#FF8A1F">03 — Bars &amp; restaurants</span>
+        <h2 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(28px,4.4vw,44px);line-height:1.14;color:#F7F2E9">Une carte de cocktails qui se <em style="font-style:italic;color:#FF8A1F">tient</em> toute la saison</h2>
+        <p style="margin:0;max-width:46ch;font-size:15.5px;line-height:1.72;font-weight:300;color:rgba(242,237,228,.62);text-wrap:pretty">Conditionnement pro, remises par volume, tarifs dégressifs dès 5 kg et un interlocuteur unique pour vos réassorts. Livraison en 72 h en France métropolitaine.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px">
+          <a href="#contact" style="padding:15px 28px;border-radius:999px;background:#FF8A1F;color:#0A0A0B;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 0 34px rgba(255,138,31,.4)" style-hover="background:#FFB45C">Demander un tarif pro</a>
+          <a href="#contact" style="padding:15px 28px;border-radius:999px;border:1px solid rgba(242,237,228,.22);color:rgba(242,237,228,.8);font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase" style-hover="border-color:rgba(255,138,31,.6);color:#FF8A1F">Recevoir un échantillon</a>
+        </div>
+      </div>
+      <div data-reveal="" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;opacity:0;transform:translateY(24px);transition:opacity .9s ease .12s,transform .9s ease .12s">
+        <sc-for list="{{ proPoints }}" as="b" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:8px;padding:22px 20px;border-radius:16px;background:rgba(10,10,11,.5);border:1px solid rgba(242,237,228,.1)">
+            <span style="font-family:'Playfair Display',Georgia,serif;font-size:28px;color:#FF8A1F" data-accent-b="">{{ b.k }}</span>
+            <span style="font-size:13px;line-height:1.6;font-weight:300;color:rgba(242,237,228,.6)">{{ b.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="apropos" style="position:relative;padding:96px 24px 104px;border-top:1px solid rgba(242,237,228,.07)">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:56px;align-items:center">
+      <div data-reveal="" data-accent-b="" style="position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1; border-radius: 50%; background: url(&quot;./chatgpt-image-25-juil-2026-17_54_59-ms0jvy1w-4qvm.png&quot;) center / cover no-repeat; border: 1px solid rgba(255,138,31,.3); box-shadow: 0 0 60px rgba(255,138,31,.14); opacity: 0; transform: translateY(24px); transition: opacity .9s ease,transform .9s ease; animation: slowDrift 11s ease-in-out infinite">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,237,228,.45);text-align:center;line-height:1.8">photo<br>atelier de séchage</span>
+      </div>
+      <div data-reveal="" style="display:flex;flex-direction:column;gap:20px;opacity:0;transform:translateY(24px);transition:opacity .9s ease .1s,transform .9s ease .1s">
+        <span data-accent-b="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#FF8A1F">04 — Notre méthode</span>
+        <h2 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,46px);line-height:1.13;color:#F7F2E9">Le temps fait le <em data-accent-b="" style="font-style:italic;color:#FF8A1F">goût</em></h2>
+        <p style="margin:0;max-width:50ch;font-size:15.5px;line-height:1.75;font-weight:300;color:rgba(242,237,228,.62);text-wrap:pretty">Nous tranchons les fruits à 3 mm, puis nous les laissons à 42 °C pendant douze à vingt-quatre heures. Rien d'autre n'entre dans le processus : pas de sucre, pas de sulfites, pas d'arôme. Ce qui reste dans la tranche, c'est le fruit — concentré.</p>
+        <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(242,237,228,.1)">
+          <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+            <div style="display:flex;gap:20px;padding:16px 0;border-bottom:1px solid rgba(242,237,228,.1)">
+              <span style="min-width:34px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FF8A1F" data-accent-b="">{{ v.n }}</span>
+              <span style="font-size:14.5px;line-height:1.6;font-weight:300;color:rgba(242,237,228,.66)">{{ v.t }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" style="position:relative;padding:72px 24px 40px;border-top:1px solid rgba(242,237,228,.09);background:linear-gradient(180deg,rgba(255,138,31,.05),rgba(10,10,11,0) 40%)">
+    <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:Parisienne,cursive;font-size:32px;color:#F7F2E9;text-shadow:0 0 22px rgba(255,138,31,.4)">Store</span>
+          <p style="margin:0;max-width:26ch;font-size:13.5px;line-height:1.7;font-weight:300;color:rgba(242,237,228,.5)">Tranches de fruits séchés pour cocktails et mocktails. Fabriqué en France.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,228,.4)">Contact</span>
+          <a href="mailto:bonjour@store.fr" style="font-size:14px;font-weight:300">bonjour@store.fr</a>
+          <a href="mailto:pro@store.fr" style="font-size:14px;font-weight:300">pro@store.fr — commandes CHR</a>
+          <span style="font-size:14px;font-weight:300;color:rgba(242,237,228,.55)">+33 6 40 16 70 85</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,228,.4)">Suivre</span>
+          <a href="#contact" style="font-size:14px;font-weight:300">Instagram</a>
+          <a href="#contact" style="font-size:14px;font-weight:300">LinkedIn</a>
+          <a href="#contact" style="font-size:14px;font-weight:300">Pinterest</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(242,237,228,.4)">Informations</span>
+          <a href="#contact" style="font-size:14px;font-weight:300">Mentions légales</a>
+          <a href="#contact" style="font-size:14px;font-weight:300">CGV</a>
+          <a href="#contact" style="font-size:14px;font-weight:300">Livraison &amp; retours</a>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(242,237,228,.08);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,237,228,.34)">
+        <span>© 2026 Store</span>
+        <span>L'abus d'alcool est dangereux pour la santé</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;glowPulse&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Ambiance&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Ambiance&quot;},&quot;secondaryAccent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;aucun&quot;,&quot;lime&quot;,&quot;rose&quot;],&quot;default&quot;:&quot;aucun&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ambiance&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      products: [
+        { name: "Orange", img: "uploads/orange.png", shot: "orange séchée", dry: "18 h", desc: "Amertume ronde et zeste confit. La tranche signature des cocktails ambrés.", use: "Old Fashioned, Negroni" },
+        { name: "Citron jaune", img: "uploads/citron%20jaune.png", shot: "citron séché", dry: "16 h", desc: "Acidité franche, parfum de zeste qui tient dans la longueur du verre.", use: "Spritz, limonade maison" },
+        { name: "Citron vert", img: "uploads/citron%20vert.png", shot: "citron vert séché", dry: "14 h", desc: "Vif et herbacé. À froisser légèrement avant de la glisser dans le verre.", use: "Mojito, Gin Tonic" },
+        { name: "Pamplemousse", img: "uploads/pamplemousse.png", shot: "pamplemousse séché", dry: "24 h", desc: "La plus grande tranche de la gamme : amère, florale, spectaculaire.", use: "Paloma, Aperitivo" },
+        { name: "Kiwi", img: "uploads/kiwi.png", shot: "kiwi séché", dry: "12 h", desc: "Douceur acidulée et graines croquantes. Notre pièce la plus graphique.", use: "Mocktails, spritz sans alcool" }
+      ],
+      uses: [
+        { name: "Dans le verre", img: "uploads/995b49e0-94f9-4cd2-88e8-2ecec358c77f.png", shot: "mojito garni", desc: "Une tranche déposée sur la glace : elle infuse doucement et parfume la gorgée finale." },
+        { name: "Garniture de verre", img: "uploads/164bc2d4-8b8c-44d7-8265-b8b34c3517b2.png", shot: "bord de coupe", desc: "Fendue jusqu'au cœur, elle se pose sur le bord d'une coupe ou d'un tumbler." },
+        { name: "Infusion à froid", img: "uploads/b320050b-ecb0-4ddd-a884-99b67f49081b.png", shot: "carafe d'infusion", desc: "Trois tranches, un litre d'eau, une nuit au frais. Base idéale des mocktails." },
+        { name: "Plateau de bar", img: "uploads/2175a361-f913-4c87-9167-31e7c1d00b50.png", shot: "mise en place", desc: "Prêtes à l'emploi, sans découpe ni perte : la mise en place du service en trente secondes." }
+      ],
+      proPoints: [
+        { k: "5 kg", v: "Seuil du tarif dégressif, tous fruits confondus." },
+        { k: "72 h", v: "Délai de livraison en France métropolitaine." },
+        { k: "12 m", v: "Conservation à l'abri de la lumière, sachet refermé." },
+        { k: "1", v: "Interlocuteur dédié pour vos réassorts et vos cartes saisonnières." }
+      ],
+      values: [
+        { n: "01", t: "Séchage lent à 42 °C, jamais de four rapide." },
+        { n: "02", t: "Aucun sucre ajouté, aucun sulfite, aucun arôme." },
+        { n: "03", t: "Fruits sourcés en Europe, tranchés à la main." }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    this.applyOptions();
+    this.setupReveal();
+    this.mq = window.matchMedia("(min-width: 860px)");
+    this.syncNav = () => {
+      const nav = this.root && this.root.querySelector("[data-nav]");
+      if (nav) nav.style.display = this.mq.matches ? "flex" : "none";
+    };
+    this.syncNav();
+    this.mq.addEventListener("change", this.syncNav);
+  }
+
+  componentDidUpdate() { this.applyOptions(); this.setupReveal(); }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.mq && this.syncNav) this.mq.removeEventListener("change", this.syncNav);
+  }
+
+  get root() { return document.querySelector("x-dc") || document.body; }
+
+  applyOptions() {
+    const r = this.root; if (!r) return;
+    const pulse = this.props.glowPulse ?? true;
+    r.querySelectorAll("[data-pulse]").forEach(el => {
+      el.style.animationPlayState = pulse ? "running" : "paused";
+      if (!pulse) el.style.opacity = "0.85";
+    });
+    const accents = { aucun: null, lime: "#B6E36A", rose: "#FF6F91" };
+    const b = accents[this.props.secondaryAccent ?? "aucun"];
+    const c = b || "#FF8A1F";
+    r.querySelectorAll("[data-accent-b]").forEach(el => {
+      if (el.tagName === "DIV") {
+        el.style.borderColor = c + "5c";
+        el.style.boxShadow = "0 0 34px " + c + "2e, inset 0 0 30px " + c + "1a";
+      } else {
+        el.style.color = c;
+        if (el.tagName === "EM") el.style.textShadow = "0 0 34px " + c + "73";
+      }
+    });
+    // halo de section + survol des cards suivent aussi l'accent secondaire
+    const usages = r.querySelector("#usages");
+    if (usages) usages.style.background = "radial-gradient(120% 60% at 50% 0%," + c + "14, rgba(10,10,11,0) 60%)";
+    r.querySelectorAll("[data-card]").forEach(el => {
+      el.onmouseenter = () => {
+        el.style.borderColor = c + "73";
+        el.style.background = "linear-gradient(180deg," + c + "17, rgba(255,255,255,.015))";
+      };
+      el.onmouseleave = () => {
+        el.style.borderColor = "rgba(242,237,228,.09)";
+        el.style.background = "linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012))";
+      };
+    });
+  }
+
+  setupReveal() {
+    const r = this.root; if (!r) return;
+    const on = this.props.revealOnScroll ?? true;
+    const nodes = r.querySelectorAll("[data-reveal]");
+    if (!on) {
+      nodes.forEach(el => { el.style.opacity = "1"; el.style.transform = "none"; });
+      return;
+    }
+    if (this.io) this.io.disconnect();
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = "1";
+          e.target.style.transform = "translateY(0)";
+          this.io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    nodes.forEach(el => this.io.observe(el));
+  }
+}
+</script>
+</body>
+</html>
