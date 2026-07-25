@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@527b52f1cf3468cf8ecde6bdce51d4c950396553/uploads/:path*"
+    }
+  ]
+}
