@@ -1,4 +1,4 @@
-# Store — site vitrine
+# Jara Slice — site vitrine
 
 Site statique, aucun build nécessaire.
 
