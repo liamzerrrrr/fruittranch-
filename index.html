@@ -341,7 +341,8 @@ class Component extends DCLogic {
     }
 
     const sync = () => {
-      const i = index(), m = maxScroll();
+      const m = maxScroll();
+      const i = track.scrollLeft >= m - 4 ? cards().length - 1 : index();
       if (dotsBox) [...dotsBox.children].forEach((d, j) => {
         d.style.background = j === i ? "#FF8A1F" : "rgba(242,237,228,.18)";
       });
@@ -352,8 +353,10 @@ class Component extends DCLogic {
       if (fadeR) fadeR.style.opacity = atEnd ? "0" : "1";
     };
     track.onscroll = () => requestAnimationFrame(sync);
-    if (prev) prev.onclick = () => goTo(index() - 1);
-    if (next) next.onclick = () => goTo(index() + 1);
+    const stepPrev = () => goTo(Math.ceil(track.scrollLeft / step() - 0.02) - 1);
+    const stepNext = () => goTo(Math.floor(track.scrollLeft / step() + 0.02) + 1);
+    if (prev) prev.onclick = stepPrev;
+    if (next) next.onclick = stepNext;
 
     let dragging = false, moved = false, startX = 0, startLeft = 0;
     track.onpointerdown = e => {
@@ -379,8 +382,8 @@ class Component extends DCLogic {
     track.onpointerup = endDrag;
     track.onpointercancel = endDrag;
     track.onkeydown = e => {
-      if (e.key === "ArrowRight") { e.preventDefault(); goTo(index() + 1); }
-      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(index() - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); stepNext(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); stepPrev(); }
     };
     sync();
   }
