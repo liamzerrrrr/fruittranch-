@@ -5,6 +5,10 @@
       "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@96d3e73/uploads/:path*"
     },
     {
+      "source": "/support.js",
+      "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@6eb4b91/support.js"
+    },
+    {
       "source": "/logo-jara-slice.png",
       "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@3708199/logo-jara-slice.png"
     },
