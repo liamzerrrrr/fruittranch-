@@ -28,6 +28,10 @@
     0%, 100% { transform: translate3d(0,0,0); }
     50% { transform: translate3d(0,-14px,0); }
   }
+  [data-car-track] { scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+  [data-car-track]::-webkit-scrollbar { display: none; }
+  [data-car-track]:focus-visible { outline: 2px solid rgba(255,138,31,.6); outline-offset: 6px; border-radius: 12px; }
+  [data-car-prev]:hover, [data-car-next]:hover { border-color: rgba(255,138,31,.7) !important; color: #FF8A1F !important; }
 </style>
 </helmet>
 
@@ -35,7 +39,7 @@
 
   <!-- NAV -->
   <header style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;background:rgba(10,10,11,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(242,237,228,.08)">
-    <span style="font-family:Parisienne,cursive;font-size:26px;color:#F2EDE4;letter-spacing:.5px;text-shadow:0 0 18px rgba(255,138,31,.45)">Jara Slice</span>
+    <img src="logo-jara-slice.png" alt="Jara Slice" style="height:38px;width:auto;display:block;filter:drop-shadow(0 0 14px rgba(255,138,31,.35))">
     <nav style="display:none;gap:28px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,237,228,.62)" data-nav="">
       <a href="#gamme" style="color:inherit">Gamme</a>
       <a href="#usages" style="color:inherit">Usages</a>
@@ -54,7 +58,7 @@
       <img src="uploads/orange.png" alt="" style="position:absolute;inset:-6%;width:112%;height:112%;object-fit:contain;mix-blend-mode:screen;opacity:.22;pointer-events:none">
       <div style="position:absolute;inset:26px;border-radius:50%;border:1px solid rgba(255,138,31,.18)"></div>
       <div style="position:relative;display:flex;flex-direction:column;align-items:center;gap:6px">
-        <span style="font-family:Parisienne,cursive;font-size:clamp(30px,7vw,44px);line-height:1;color:#FFF6EA;text-shadow:0 0 32px rgba(255,138,31,.6)">Jara Slice</span>
+        <img src="logo-jara-slice.png" alt="Jara Slice" style="width:min(190px,46vw);height:auto;display:block;filter:drop-shadow(0 0 26px rgba(255,138,31,.55))">
         <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(242,237,228,.5)">Séché lentement</span>
       </div>
     </div>
@@ -76,28 +80,39 @@
   <!-- GAMME -->
   <section id="gamme" style="position:relative;padding:96px 24px;border-top:1px solid rgba(242,237,228,.07)">
     <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:56px">
-      <div data-reveal="" style="display:flex;flex-direction:column;gap:16px;max-width:640px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">
-        <span data-accent-b="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#FF8A1F">01 — La gamme</span>
-        <h2 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,50px);line-height:1.12;color:#F7F2E9">Cinq <em data-accent-b="" style="font-style:italic;color:#FF8A1F">tranches</em>, cinq caractères</h2>
-        <p style="margin:0;font-size:16px;line-height:1.7;font-weight:300;color:rgba(242,237,228,.6);text-wrap:pretty">Chaque fruit a son temps de séchage. Ni trop souple, ni cassant : la tranche parfaite pour flotter, infuser ou couronner un verre.</p>
+      <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease">
+        <div style="display:flex;flex-direction:column;gap:16px;max-width:640px">
+          <span data-accent-b="" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:#FF8A1F">01 — La gamme</span>
+          <h2 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,50px);line-height:1.12;color:#F7F2E9">Cinq <em data-accent-b="" style="font-style:italic;color:#FF8A1F">tranches</em>, cinq caractères</h2>
+          <p style="margin:0;font-size:16px;line-height:1.7;font-weight:300;color:rgba(242,237,228,.6);text-wrap:pretty">Chaque fruit a son temps de séchage. Ni trop souple, ni cassant : la tranche parfaite pour flotter, infuser ou couronner un verre. Faites glisser pour explorer.</p>
+        </div>
+        <div style="display:flex;gap:10px;padding-bottom:4px">
+          <button data-car-prev="" aria-label="Produit précédent" style="width:46px;height:46px;border-radius:50%;background:none;border:1px solid rgba(242,237,228,.25);color:rgba(242,237,228,.85);font-size:17px;line-height:1;cursor:pointer;transition:border-color .3s ease,color .3s ease,opacity .3s ease">←</button>
+          <button data-car-next="" aria-label="Produit suivant" style="width:46px;height:46px;border-radius:50%;background:none;border:1px solid rgba(242,237,228,.25);color:rgba(242,237,228,.85);font-size:17px;line-height:1;cursor:pointer;transition:border-color .3s ease,color .3s ease,opacity .3s ease">→</button>
+        </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px" data-grid="gamme">
-        <sc-for list="{{ products }}" as="p" hint-placeholder-count="5">
-          <article data-reveal="" data-card="" style="display:flex;flex-direction:column;gap:20px;padding:28px 24px 30px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid rgba(242,237,228,.09);opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease,border-color .4s ease,background .4s ease" style-hover="border-color:rgba(255,138,31,.45);background:linear-gradient(180deg,rgba(255,138,31,.09),rgba(255,255,255,.015))">
-            <div style="position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;border-radius:50%;overflow:hidden">
-              <img src="{{ p.img }}" alt="{{ p.shot }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;transform:scale(1.4);mix-blend-mode:screen">
-            </div>
-            <div style="display:flex;flex-direction:column;gap:10px">
-              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
-                <h3 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:23px;color:#F7F2E9">{{ p.name }}</h3>
-                <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF8A1F" data-accent-b="">{{ p.dry }}</span>
+      <div style="position:relative" data-carousel="gamme">
+        <div data-car-track="" tabindex="0" aria-label="Carrousel des produits" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 10px">
+          <sc-for list="{{ products }}" as="p" hint-placeholder-count="5">
+            <article data-reveal="" data-card="" style="flex:0 0 min(320px,80vw);scroll-snap-align:start;display:flex;flex-direction:column;gap:20px;padding:28px 24px 30px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid rgba(242,237,228,.09);opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease,border-color .4s ease,background .4s ease" style-hover="border-color:rgba(255,138,31,.45);background:linear-gradient(180deg,rgba(255,138,31,.09),rgba(255,255,255,.015))">
+              <div style="position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;border-radius:50%;overflow:hidden">
+                <img src="{{ p.img }}" alt="{{ p.shot }}" loading="lazy" draggable="false" style="width:100%;height:100%;object-fit:cover;transform:scale(1.4);mix-blend-mode:screen;user-select:none">
               </div>
-              <p style="margin:0;font-size:14px;line-height:1.65;font-weight:300;color:rgba(242,237,228,.58);text-wrap:pretty">{{ p.desc }}</p>
-              <span style="margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,228,.4)">↳ {{ p.use }}</span>
-            </div>
-          </article>
-        </sc-for>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+                  <h3 style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:23px;color:#F7F2E9">{{ p.name }}</h3>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF8A1F" data-accent-b="">{{ p.dry }}</span>
+                </div>
+                <p style="margin:0;font-size:14px;line-height:1.65;font-weight:300;color:rgba(242,237,228,.58);text-wrap:pretty">{{ p.desc }}</p>
+                <span style="margin-top:4px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,237,228,.4)">↳ {{ p.use }}</span>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+        <div data-car-fade-l="" style="position:absolute;left:0;top:0;bottom:10px;width:56px;background:linear-gradient(90deg,#0A0A0B,rgba(10,10,11,0));pointer-events:none;opacity:0;transition:opacity .35s ease"></div>
+        <div data-car-fade-r="" style="position:absolute;right:0;top:0;bottom:10px;width:56px;background:linear-gradient(270deg,#0A0A0B,rgba(10,10,11,0));pointer-events:none;opacity:1;transition:opacity .35s ease"></div>
+        <div data-car-dots="" style="display:flex;gap:8px;justify-content:center;padding-top:26px"></div>
       </div>
     </div>
   </section>
@@ -179,7 +194,7 @@
     <div style="max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px">
         <div style="display:flex;flex-direction:column;gap:14px">
-          <span style="font-family:Parisienne,cursive;font-size:32px;color:#F7F2E9;text-shadow:0 0 22px rgba(255,138,31,.4)">Jara Slice</span>
+          <img src="logo-jara-slice.png" alt="Jara Slice" style="height:42px;width:auto;display:block;filter:drop-shadow(0 0 16px rgba(255,138,31,.35))">
           <p style="margin:0;max-width:26ch;font-size:13.5px;line-height:1.7;font-weight:300;color:rgba(242,237,228,.5)">Tranches de fruits séchés pour cocktails et mocktails. Fabriqué en France.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px">
@@ -243,6 +258,7 @@ class Component extends DCLogic {
   componentDidMount() {
     this.applyOptions();
     this.setupReveal();
+    this.setupCarousel();
     this.mq = window.matchMedia("(min-width: 860px)");
     this.syncNav = () => {
       const nav = this.root && this.root.querySelector("[data-nav]");
@@ -252,7 +268,7 @@ class Component extends DCLogic {
     this.mq.addEventListener("change", this.syncNav);
   }
 
-  componentDidUpdate() { this.applyOptions(); this.setupReveal(); }
+  componentDidUpdate() { this.applyOptions(); this.setupReveal(); this.setupCarousel(); }
 
   componentWillUnmount() {
     if (this.io) this.io.disconnect();
@@ -293,6 +309,80 @@ class Component extends DCLogic {
         el.style.background = "linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012))";
       };
     });
+  }
+
+  setupCarousel() {
+    const r = this.root; if (!r) return;
+    const track = r.querySelector("[data-car-track]"); if (!track) return;
+    const prev = r.querySelector("[data-car-prev]");
+    const next = r.querySelector("[data-car-next]");
+    const dotsBox = r.querySelector("[data-car-dots]");
+    const fadeL = r.querySelector("[data-car-fade-l]");
+    const fadeR = r.querySelector("[data-car-fade-r]");
+    const cards = () => [...track.children];
+    const step = () => {
+      const c = cards();
+      return c.length > 1 ? c[1].offsetLeft - c[0].offsetLeft : (c[0] ? c[0].offsetWidth : 320);
+    };
+    const maxScroll = () => track.scrollWidth - track.clientWidth;
+    const index = () => Math.round(track.scrollLeft / step());
+    const smooth = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    const goTo = i => track.scrollTo({ left: Math.max(0, Math.min(i * step(), maxScroll())), behavior: smooth });
+
+    if (dotsBox) {
+      dotsBox.innerHTML = "";
+      cards().forEach((c, i) => {
+        const d = document.createElement("button");
+        d.setAttribute("aria-label", "Aller au produit " + (i + 1));
+        d.style.cssText = "width:26px;height:4px;border-radius:2px;border:none;padding:0;cursor:pointer;background:rgba(242,237,228,.18);transition:background .3s ease";
+        d.onclick = () => goTo(i);
+        dotsBox.appendChild(d);
+      });
+    }
+
+    const sync = () => {
+      const i = index(), m = maxScroll();
+      if (dotsBox) [...dotsBox.children].forEach((d, j) => {
+        d.style.background = j === i ? "#FF8A1F" : "rgba(242,237,228,.18)";
+      });
+      const atStart = track.scrollLeft <= 4, atEnd = track.scrollLeft >= m - 4;
+      if (prev) { prev.style.opacity = atStart ? ".3" : "1"; prev.style.pointerEvents = atStart ? "none" : "auto"; }
+      if (next) { next.style.opacity = atEnd ? ".3" : "1"; next.style.pointerEvents = atEnd ? "none" : "auto"; }
+      if (fadeL) fadeL.style.opacity = atStart ? "0" : "1";
+      if (fadeR) fadeR.style.opacity = atEnd ? "0" : "1";
+    };
+    track.onscroll = () => requestAnimationFrame(sync);
+    if (prev) prev.onclick = () => goTo(index() - 1);
+    if (next) next.onclick = () => goTo(index() + 1);
+
+    let dragging = false, moved = false, startX = 0, startLeft = 0;
+    track.onpointerdown = e => {
+      if (e.pointerType !== "mouse") return;
+      dragging = true; moved = false;
+      startX = e.clientX; startLeft = track.scrollLeft;
+      track.style.scrollSnapType = "none";
+      track.style.cursor = "grabbing";
+    };
+    track.onpointermove = e => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (!moved && Math.abs(dx) > 4) { moved = true; track.setPointerCapture(e.pointerId); }
+      if (moved) track.scrollLeft = startLeft - dx;
+    };
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      track.style.cursor = "";
+      if (moved) goTo(index());
+      setTimeout(() => { track.style.scrollSnapType = "x mandatory"; }, 480);
+    };
+    track.onpointerup = endDrag;
+    track.onpointercancel = endDrag;
+    track.onkeydown = e => {
+      if (e.key === "ArrowRight") { e.preventDefault(); goTo(index() + 1); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); goTo(index() - 1); }
+    };
+    sync();
   }
 
   setupReveal() {
