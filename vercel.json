@@ -3,6 +3,14 @@
     {
       "source": "/uploads/:path*",
       "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@96d3e73/uploads/:path*"
+    },
+    {
+      "source": "/logo-jara-slice.png",
+      "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@3708199/logo-jara-slice.png"
+    },
+    {
+      "source": "/chatgpt-image-25-juil-2026-17_54_59-ms0jvy1w-4qvm.png",
+      "destination": "https://cdn.jsdelivr.net/gh/liamzerrrrr/fruittranch-@3708199/chatgpt-image-25-juil-2026-17_54_59-ms0jvy1w-4qvm.png"
     }
   ]
 }
